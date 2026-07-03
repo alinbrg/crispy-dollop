@@ -1,0 +1,147 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+img {
+	width: 100%;
+}
+ul {
+	list-style: none;
+}
+
+.wrapper {
+	display: grid;
+	/* gap: 20px; */
+	grid-template-columns: 1fr 2fr 1fr;
+
+	/* grid-template-columns: repeat(4, 1fr); */
+
+	/* grid-template-rows: 300px 200px; */
+
+	grid-auto-rows: minmax(100px, auto);
+
+	grid-template-areas:
+		"header header header"
+		"focus main aside"
+		"focus main aside"
+		"articles articles aside"
+		"footer footer footer";
+
+	.item {
+		background-color: red;
+		/* width: 200px; */
+		width: 100%;
+		/* height: 200px; */
+		border: 1px solid;
+		display: flex;
+		flex-direction: column;
+		padding: 20px;
+	}
+
+	.header {
+		/* grid-column-start: 1;
+		grid-column-end: -1;
+
+		grid-column: 1 / -1;
+
+		grid-row-start: 1;
+		grid-row-end: 2;
+
+		grid-row: 1 / 2; */
+		background-color: darkcyan;
+		grid-area: header;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.aside {
+		/* grid-column-start: 1;
+		grid-column-end: 2;
+		grid-row-start: 2;
+		grid-row-end: 5;
+
+		grid-row: 2 / span 3; */
+
+		background-color: aquamarine;
+		grid-area: aside;
+		a {
+			font-size: 12px;
+		}
+	}
+	.main {
+		/* grid-column-start: 2;
+		grid-column-end: 3;
+		grid-row-start: 2;
+		grid-row-end: 4; */
+		background-color: brown;
+		grid-area: main;
+	}
+	.focus {
+		/* grid-column-start: 3;
+		grid-column-end: 4;
+		grid-row-start: 2;
+		grid-row-end: 4; */
+		background-color: blueviolet;
+		grid-area: focus;
+	}
+	.articles {
+		/* grid-column-start: 2;
+		grid-column-end: -1;
+		grid-row-start: 4;
+		grid-row-end: 5; */
+		background-color: chartreuse;
+		grid-area: articles;
+
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 10px;
+
+		article {
+			h3 {
+				font-size: 14px;
+			}
+		}
+	}
+
+	.footer {
+		/* grid-column-start: 1;
+		grid-column-end: -1;
+		grid-column: 1 / span 3;
+		grid-row-start: 5;
+		grid-row-end: 6; */
+		background-color: coral;
+		grid-area: footer;
+
+		.footer-wrapper {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+			.socials {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 10px;
+			}
+		}
+	}
+}
+.catalog-wrapper {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	/* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+
+	gap: 20px;
+	/* grid-auto-rows: minmax(); */
+	img {
+		height: 250px;
+		object-fit: cover;
+	}
+}
